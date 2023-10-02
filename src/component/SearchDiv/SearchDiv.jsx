@@ -53,36 +53,57 @@ const SearchDiv = () => {
         </div>
       </from>
 
-      <div className="secDiv flex justify-center item-center gap-2">
+      <div className="secDiv flex justify-center item-center gap-10">
+        <div className="flex singleSearch items-center gap-2">
+          <label htmlFor="relevance" className="text-[#808080] font-semibold">
+            Sort by:
+          </label>
+          <select
+            name=""
+            id="relevance"
+            className="bg-white rounded-[3px] px-4 py-1"
+          >
+            <option value="">Relevance</option>
+            <option value="">Inclusive</option>
+            <option value="">Starts With</option>
+            <option value="">Contains</option>
+          </select>
+        </div>
 
-        <label htmlFor="relevance" className="text-[#808080] font-semibold">Sort by:</label>
-        <select name="" id="relevance" className="bg-white rounded-[3px] px-4 py-1">
-          <option value="">Relevance</option>
-          <option value="">Inclusive</option>
-          <option value="">Starts With</option>
-          <option value="">Contains</option>
-        </select>
+        <div className="flex singleSearch items-center gap-2">
+          <label htmlFor="relevance" className="text-[#808080] font-semibold">
+            Type:
+          </label>
+          <select
+            name=""
+            id="relevance"
+            className="bg-white rounded-[3px] px-4 py-1"
+          >
+            <option value="">Full-time</option>
+            <option value="">Remote</option>
+            <option value="">Contact</option>
+            <option value="">Part-time</option>
+          </select>
+        </div>
+        
+        <div className="flex singleSearch items-center gap-2">
+          <label htmlFor="level" className="text-[#808080] font-semibold">
+            Level:
+          </label>
+          <select
+            name=""
+            id="level"
+            className="bg-white rounded-[3px] px-4 py-1"
+          >
+            <option value="">Senior</option>
+            <option value="">Beginner</option>
+            <option value="">Intermediate</option>
+            <option value="">Advocate</option>
+          </select>
+        </div>
 
-        <label htmlFor="relevance" className="text-[#808080] font-semibold">Type:</label>
-        <select name="" id="relevance" className="bg-white rounded-[3px] px-4 py-1">
-          <option value="">Full-time</option>
-          <option value="">Remote</option>
-          <option value="">Contact</option>
-          <option value="">Part-time</option>
-        </select>
-
-        <label htmlFor="relevance" className="text-[#808080] font-semibold">Sort by:</label>
-        <select name="" id="relevance" className="bg-white rounded-[3px] px-4 py-1">
-          <option value="">Relevance</option>
-          <option value="">Inclusive</option>
-          <option value="">Starts With</option>
-          <option value="">Contains</option>
-        </select>
-
-
+        <span className="text-[#a1a1a1] cursor-pointer">Clear All</span>
       </div>
-
-
     </div>
   );
 };
