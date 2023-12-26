@@ -1,27 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import NavBar from './component/NavBar/NavBar'
-import SearchDiv from './component/SearchDiv/SearchDiv'
-import JobDiv from './component/JobDiv/JobDiv'
-import ValueDiv from './component/ValueDiv/ValueDiv'
-import Footer from './component/Footer/Footer'
-
-function App() {
- 
-
+import React from "react";
+import Home from "./Components/Home/Home";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import { Outlet, useNavigation } from "react-router-dom";
+import { Toaster } from 'react-hot-toast';
+import LoadingSpinner from "./Components/Loading-Spinner/LoadingSpinner";
+const App = () => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return (
-    <>
-     <div className='w-[85%] mx-auto bg-white'>
-     <NavBar/>
-      <SearchDiv/>
-      <JobDiv/>
-      <ValueDiv/>
-      <Footer/>
-     </div>
-    </>
-  )
-}
+    <div>
+      <Header></Header>
+      <Toaster></Toaster>
+      <div className="md:min-h-[calc(100vh-293px)]">
+        <Outlet></Outlet>
+      </div>
+      <Footer></Footer>
+    </div>
+  );
+};
 
-export default App
+export default App;
